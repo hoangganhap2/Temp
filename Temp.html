@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<input id="box" type="Number">
+<button id="change" onclick="changeC()">Change</button>
+<h1 id="hienthi"></h1>
+<body>
+<script>
+function changeC() {
+    var c=Number(document.getElementById("box").value);
+    function changec(c) {
+        this.c=c;
+        this.tempF=function () {
+            return c*1.8+32;
+        };
+        this.tempK=function () {
+            return c+273.15
+        }
+    }
+    var changetempC= new changec(c);
+    document.getElementById("hienthi").innerHTML="Độ F là "+changetempC.tempF()+"</br>"+"Độ K là "+changetempC.tempK();
+}
+</script>
+</body>
+</html>
